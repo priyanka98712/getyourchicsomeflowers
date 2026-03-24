@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Bouquet</title>
+</head>
+
+<body>
+
+    <h1 style="text-align:center;color:#ff4d88;">
+        💐 Get Your Chic Some Flowers 💘
+    </h1>
+
+    <h3 style="text-align:center;color:#777;">
+        Never show up to a date empty-handed
+    </h3>
+
+    <h2 style="text-align:center;">
+        For {{name}}'s chic 💕
+    </h2>
+
+    <div class="wrapper">
+
+        <div class="bouquet">
+
+            {% for i in range(flowers.rose|int) %}
+            <span class="flower">🌹</span>
+            {% endfor %}
+
+            {% for i in range(flowers.tulip|int) %}
+            <span class="flower">🌷</span>
+            {% endfor %}
+
+            {% for i in range(flowers.lily|int) %}
+            <span class="flower">🌼</span>
+            {% endfor %}
+
+            {% for i in range(flowers.sunflower|int) %}
+            <span class="flower">🌻</span>
+            {% endfor %}
+
+        </div>
+
+        <div class="ribbon"></div>
+
+    </div>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #fff0f5;
+        }
+
+        .wrapper {
+            display: inline-block;
+            margin-top: 30px;
+            animation: pop 0.7s ease;
+        }
+
+        .bouquet {
+            background: #ffe066;
+            padding: 30px;
+            border-radius: 0 0 120px 120px;
+            width: 260px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .ribbon {
+            width: 0;
+            height: 0;
+            border-left: 130px solid transparent;
+            border-right: 130px solid transparent;
+            border-top: 70px solid #ff2e88;
+            margin: auto;
+        }
+
+        .flower {
+            font-size: 40px;
+            margin: 5px;
+            display: inline-block;
+            animation: float 0.5s ease;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(20px);
+                opacity: 0
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+    </style>
+
+</body>
+
+</html>
